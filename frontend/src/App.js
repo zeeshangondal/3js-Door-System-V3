@@ -12,6 +12,7 @@ import { Form, Row, Col } from 'react-bootstrap';
 import 'jspdf-autotable';
 import jsPDF from 'jspdf';
 import { ColorOptions } from './components/ColorOptionsData';
+import BackNextComp from './components/BackNextComp';
 
 
 
@@ -407,7 +408,7 @@ function App() {
         });
         // Save the PDF with the name 'document.pdf'
         // pdf.save('document.pdf');
-        
+
         return pdf
     };
 
@@ -424,7 +425,7 @@ function App() {
 
             <div style={{ marginTop: '1vh' }}>
                 <div className='d-flex flex-column flex-md-row'>
-                    <div className=' col-10 col-md-9' style={{ position: 'relative', ...styleCss , borderRadius:'20px 20px 20px 20px' }}>
+                    <div className=' col-10 col-md-9' style={{ position: 'relative', ...styleCss, borderRadius: '20px 20px 20px 20px' }}>
                         <DoorScene
                             rendererRef={rendererRef}
                             sWidth={convertMmToDoorWidth(doorSpecs.width)}
@@ -456,11 +457,12 @@ function App() {
                         </button>
                     </div>
 
-
-                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius:'20px 20px 20px 20px' }}>
-                        <div className='container'>
+                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative' }}>
+                        <div className='container' style={{ paddingBottom: '2rem' }}>
                             {getForm()}
-
+                        </div>
+                        <div style={{ position: 'absolute', bottom: 4, left: 0, width: '90%' }}>
+                            <BackNextComp middleLabel="1/4" />
                         </div>
                     </div>
                 </div>

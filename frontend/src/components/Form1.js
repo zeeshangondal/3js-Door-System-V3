@@ -5,7 +5,6 @@ import doorType3SVG from '../SVGs/type3.svg'
 import doorType4SVG from '../SVGs/type4.svg'
 import ToggleSwitch from './ToggleSwitch';
 import BackNextComp from './BackNextComp';
-import LabelWithRange from './LabelWithRange';
 import LabelWithRangeFrom1 from './LabelWithRangeForm1';
 
 

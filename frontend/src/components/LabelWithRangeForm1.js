@@ -8,7 +8,7 @@ export default function LabelWithRange({ label, number, setNumber ,range}) {
         backgroundColor: '#1f2937',
         color: 'white',
         padding: '5px',
-        border: 'none',
+        // border: 'none',
     };
 
     const defaultStyle = {
@@ -32,7 +32,7 @@ export default function LabelWithRange({ label, number, setNumber ,range}) {
                                     ...((number === n ? activeStyle : defaultStyle)),
                                     ...(index === 0
                                         ? {
-                                            border: '1px solid rgb(156, 163, 175)',
+                                            border: '2px solid rgb(156, 163, 175)',
                                             borderRadius: '10px 0px 0px 10px',
                                         }
                                         : {}),
@@ -67,7 +67,7 @@ export default function LabelWithRange({ label, number, setNumber ,range}) {
                                     index === 0 ? 'left-round-style' : ''
                                 } ${index === range.length - 1 ? 'right-round-style' : ''}`}
                             >
-                                <h6 style={{fontWeight:'normal',padding:'2px'}}>{n}</h6>
+                                {n}
                             </div>
                         ))}
                     </div>

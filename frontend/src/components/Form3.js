@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BackNextComp from './BackNextComp';
 import ToggleSwitch from './ToggleSwitch';
-import LabelWithInput from './LabelWithInput';
-import LabelWithRange from './LabelWithRange';
+import LabelWithRangeForm3 from './LabelWithRangeForm3';
 
 
 
@@ -51,21 +50,21 @@ function Form2(props) {
             <div>
                 <div className='mt-3'>
                     <b><h5>Door</h5></b>
-                    <LabelWithRange label="Liggers" number={doorSpecs.numberOfHBars}   setNumber={setNumberOfDoorHBars}  range={[0, 1, 2, 3, 4]} />
-                    <LabelWithRange label="Staanders" number={doorSpecs.numberOfVBars} setNumber={setNumberOfDoorVBars} range={[0, 1, 2, 3, 4]} />
+                    <LabelWithRangeForm3 label="Liggers" number={doorSpecs.numberOfHBars}   setNumber={setNumberOfDoorHBars}  range={[0, 1, 2, 3, 4]} />
+                    <LabelWithRangeForm3 label="Staanders" number={doorSpecs.numberOfVBars} setNumber={setNumberOfDoorVBars} range={[0, 1, 2, 3, 4]} />
                 </div>
                 {doorSpecs.leftPanel.width > 0 || doorSpecs.rightPanel.width > 0 ?
                     <div className='mt-3'>
                         <b><h5>Zig Panel</h5></b>
-                        <LabelWithRange label="Liggers" number={doorSpecs.leftRightPanelHBars} setNumber={setNumberOfLeftRightPanelHBars} range={[0, 1, 2, 3, 4]} />
-                        <LabelWithRange label="Staanders" number={doorSpecs.leftRightPanelVBars} setNumber={setNumberOfLeftRightPanelVBars} range={[0, 1, 2, 3, 4]} />
+                        <LabelWithRangeForm3 label="Liggers" number={doorSpecs.leftRightPanelHBars} setNumber={setNumberOfLeftRightPanelHBars} range={[0, 1, 2, 3, 4]} />
+                        <LabelWithRangeForm3 label="Staanders" number={doorSpecs.leftRightPanelVBars} setNumber={setNumberOfLeftRightPanelVBars} range={[0, 1, 2, 3, 4]} />
                     </div>
                     : ''}
                 {doorSpecs.topPanel.include && doorSpecs.topPanel.length>0 ?
                     <div className='mt-3'>
                         <b><h5>Top Panel</h5></b>
-                        <LabelWithRange label="Liggers" number={doorSpecs.topPanel.numberOfHBars} setNumber={setNumberOfTopPanelHBars} range={[0, 1, 2, 3, 4]} />
-                        <LabelWithRange label="Staanders" number={doorSpecs.topPanel.numberOfVBars} setNumber={setNumberOfTopPanelVBars} range={[0, 1, 2, 3, 4]} />
+                        <LabelWithRangeForm3 label="Liggers" number={doorSpecs.topPanel.numberOfHBars} setNumber={setNumberOfTopPanelHBars} range={[0, 1, 2, 3, 4]} />
+                        <LabelWithRangeForm3 label="Staanders" number={doorSpecs.topPanel.numberOfVBars} setNumber={setNumberOfTopPanelVBars} range={[0, 1, 2, 3, 4]} />
                     </div>
                     : ''}
 
