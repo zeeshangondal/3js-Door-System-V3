@@ -6,6 +6,8 @@ import doorType4SVG from '../SVGs/type4.svg'
 import ToggleSwitch from './ToggleSwitch';
 import BackNextComp from './BackNextComp';
 import LabelWithRange from './LabelWithRange';
+import LabelWithRangeFrom1 from './LabelWithRangeForm1';
+
 
 
 
@@ -104,8 +106,8 @@ function Form1(props) {
                     </div>
                 </div>
             </div>
-            <div>
-                <LabelWithRange range={showingNumberOfDoors} label="Aantal" number={doorSpecs.numberOfDoors} setNumber={handleNumberOfDoorsChange} />
+            <div >
+                <LabelWithRangeFrom1 range={showingNumberOfDoors} label="Aantal" number={doorSpecs.numberOfDoors} setNumber={handleNumberOfDoorsChange} />
             </div>
 
             <div>
