@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.grid-hover {
+  cursor: pointer;
+  background-color: #f8f9fa; /* Normal state background */
+  transition: background-color 0.7s ease; /* Smooth transition for background-color */
+}
+
+.grid-hover:hover {
+  background-color: #1F2937 !important; /* Background color on hover */
+  color: white;
+
+}
+
+.black-background-white-text {
+  background-color: black;
+  color: white;
+}
+
+.custom-modal .modal-content {
+  border-radius: 20px;
+}
+
+.custom-input.form-control {
+  height: 50px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: '5px';
+  margin-bottom: 10px;
+}
+
+.custom-input.form-control:focus,
+.custom-input.form-control:active {
+  border-color: #000; /* Change to the desired border color */
+  outline: none;
+  box-shadow: none; /* Optional: Remove the default box shadow */
+}
+
+
+
+.shadow1 {
+  border-bottom: 2px solid lightgray;
+}
