@@ -117,10 +117,6 @@ function Form4(props) {
                 </div>
 
             </div>
-
-            <div >
-                <BackNextComp middleLabel="4/4" nextButtonLabel="Order" onGoBack={handleGoBack} onGoNext={handleGoNext} />
-            </div>
         </div>
     );
 }

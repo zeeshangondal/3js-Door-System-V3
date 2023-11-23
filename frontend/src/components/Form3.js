@@ -70,9 +70,6 @@ function Form2(props) {
 
             </div>
 
-            <div>
-                <BackNextComp middleLabel="3/4" onGoBack={handleGoBack} onGoNext={handleGoNext}  />
-            </div>
         </div>
     );
 }

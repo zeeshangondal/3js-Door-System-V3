@@ -461,8 +461,15 @@ function App() {
                         <div className='container' style={{ paddingBottom: '2rem' }}>
                             {getForm()}
                         </div>
-                        <div style={{ position: 'absolute', bottom: 4, left: 0, width: '90%' }}>
-                            <BackNextComp middleLabel="1/4" />
+                        <div className="container" style={{ position: 'absolute', bottom: 4, width: '85%' }}>
+                            <BackNextComp 
+                            middleLabel={stepNumber+'/'+4} 
+                            onGoBack={handleGoBack} 
+                            onGoNext={handleGoNext} 
+                            backDisabled={stepNumber==1}
+                            nextButtonLabel={stepNumber==4? 'Offer':'Next Step' } 
+                            />
+
                         </div>
                     </div>
                 </div>

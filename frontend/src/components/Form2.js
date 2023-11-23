@@ -251,9 +251,6 @@ function Form2(props) {
 
             </div>
 
-            <div>
-                <BackNextComp middleLabel="2/4" onGoBack={handleGoBack} onGoNext={handleGoNext} />
-            </div>
         </div>
     );
 }

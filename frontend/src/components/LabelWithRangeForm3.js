@@ -8,7 +8,7 @@ export default function LabelWithRangeForm3({ label, number, setNumber, range })
             backgroundColor: '#1f2937',
             color: 'white',
             padding: '5px',
-            border: '1px solid red',
+            border: '1px solid rgb(156, 163, 175)',
             borderRadius: '10px 0px 0px 10px',
         },
         {
