@@ -73,7 +73,7 @@ function Form2(props) {
     function filpBottomSteelPanelInclude() {
         if (doorSpecs.bottomSteelPanel.include) {
             setBottomSteelPanelLength(0)
-        }else{
+        } else {
             setBottomSteelPanelLength(300)
         }
 
@@ -148,24 +148,79 @@ function Form2(props) {
                     <div className='mt-2'>
                         <h6>Position</h6>
                     </div>
+
                     <div className="container">
                         <div className="row">
-                            <div className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 1 ? 'black-background-white-text' : ''}`} onClick={() => setPanelTypePosition(1)} style={{ border: '1px solid black', height: '6vh', borderTopLeftRadius: "15%", cursor: "pointer" }}>
+                            <div
+                                className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 1 ? 'black-background-white-text' : 'form2-grid-hover'
+                                    }`}
+                                onClick={() => setPanelTypePosition(1)}
+                                style={{
+                                    border: '1px solid #9CA3AF',
+                                    height: '6vh',
+                                    borderTopLeftRadius: '10px',
+                                    borderBottomLeftRadius: '0px',
+                                    borderBottomRightRadius: '0px',
+                                    borderTopRightRadius: '0px',
+                                    cursor: 'pointer',
+                                }}
+                            >
                                 Geen
                             </div>
-                            <div className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 2 ? 'black-background-white-text' : ''}`} onClick={() => setPanelTypePosition(2)} style={{ border: '1px solid black', height: '6vh', borderTopRightRadius: "15%", cursor: "pointer" }}>
+                            <div
+                                className={`col-6 d-flex  justify-content-center align-items-center ${doorSpecs.panelTypePosition === 2 ? 'black-background-white-text' : 'form2-grid-hover'
+                                    }`}
+                                onClick={() => setPanelTypePosition(2)}
+                                style={{
+                                    border: '1px solid #9CA3AF',
+                                    height: '6vh',
+                                    borderTopLeftRadius: '0px',
+                                    borderBottomLeftRadius: '0px',
+                                    borderBottomRightRadius: '0px',
+                                    borderTopRightRadius: '10px',
+                                    cursor: 'pointer',
+                                }}
+                            >
                                 Links
                             </div>
                         </div>
                         <div className="row">
-                            <div className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 3 ? 'black-background-white-text' : ' '}`} onClick={() => setPanelTypePosition(3)} style={{ border: '1px solid black', height: '6vh', borderBottomLeftRadius: "15%", cursor: "pointer" }}>
+                            <div
+                                className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 3 ? 'black-background-white-text' : 'form2-grid-hover'
+                                    }`}
+                                onClick={() => setPanelTypePosition(3)}
+                                style={{
+                                    border: '1px solid #9CA3AF',
+                                    height: '6vh',
+                                    borderTopLeftRadius: '0px',
+                                    borderBottomLeftRadius: '10px',
+                                    borderBottomRightRadius: '0px',
+                                    borderTopRightRadius: '0px',
+                                    cursor: 'pointer',
+                                }}
+                            >
                                 Rechts
                             </div>
-                            <div className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 4 ? 'black-background-white-text' : ' '}`} onClick={() => setPanelTypePosition(4)} style={{ border: '1px solid black', height: '6vh', borderBottomRightRadius: "15%", cursor: "pointer" }}>
+                            <div
+                                className={`col-6 d-flex justify-content-center align-items-center ${doorSpecs.panelTypePosition === 4 ? 'black-background-white-text' : 'form2-grid-hover'
+                                    }`}
+                                onClick={() => setPanelTypePosition(4)}
+                                style={{
+                                    border: '1px solid #9CA3AF',
+                                    height: '6vh',
+                                    borderTopLeftRadius: '0px',
+                                    borderBottomLeftRadius: '0px',
+                                    borderBottomRightRadius: '10px',
+                                    borderTopRightRadius: '0px',
+                                    cursor: 'pointer',
+                                }}
+                            >
                                 Beide
                             </div>
                         </div>
                     </div>
+
+
                     {doorSpecs.panelTypePosition === 2 || doorSpecs.panelTypePosition === 4 ?
                         <div className='mt-2'>
                             <LabelWithInput label="Left side panel width" value={doorSpecs.leftPanel.width} setValue={setLeftPanelWidth} />

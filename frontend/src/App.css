@@ -50,7 +50,7 @@
 }
 
 .black-background-white-text {
-  background-color: black;
+  background-color: #1f2937;
   color: white;
 }
 
@@ -77,4 +77,10 @@
 
 .shadow1 {
   border-bottom: 2px solid lightgray;
+}
+
+
+/* #1F2937 */
+.form2-grid-hover:hover{
+  background-color: lightgray;  
 }
