@@ -6,7 +6,7 @@ import LabelWithInput from './LabelWithInput';
 
 
 function Form2(props) {
-    let { doorSpecs, setDoorSpecs, handleGoBack, handleGoNext,
+    let { doorSpecs, setDoorSpecs,
     } = props
 
 

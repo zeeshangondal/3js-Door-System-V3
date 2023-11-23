@@ -11,7 +11,7 @@ import LabelWithRangeFrom1 from './LabelWithRangeForm1';
 
 
 function Form1(props) {
-    let { doorSpecs, setDoorSpecs, handleLengthChange, handleWidthChange, handleNumberOfDoorsChange, handleGoBack, handleGoNext } = props
+    let { doorSpecs, setDoorSpecs, handleLengthChange, handleWidthChange, handleNumberOfDoorsChange} = props
     const doorTypeImages = [doorType1SVG, doorType2SVG, doorType3SVG, doorType4SVG]
     const [showingNumberOfDoors, setShowingNumberOfDoors] = useState([1, 2, 3, 4])
     const [isHovered, setIsHovered] = useState(0);

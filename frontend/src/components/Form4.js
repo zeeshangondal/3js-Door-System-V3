@@ -9,7 +9,7 @@ import ColorDropdown from './ColorDropdown';
 
 
 function Form4(props) {
-    let { doorSpecs, setDoorSpecs, handleGoBack, handleGoNext, backgroundGradient } = props
+    let { doorSpecs, setDoorSpecs } = props
     function setFrameColor(color) {
         setDoorSpecs(pre => {
             return {

@@ -6,7 +6,7 @@ import LabelWithRangeForm3 from './LabelWithRangeForm3';
 
 
 function Form2(props) {
-    let { handleGoBack, handleGoNext, doorSpecs, setDoorSpecs } = props
+    let { doorSpecs, setDoorSpecs } = props
     function setNumberOfDoorHBars(number){
         setDoorSpecs(pre=>{
             return {...pre, numberOfHBars:number}

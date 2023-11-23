@@ -121,8 +121,6 @@ function App() {
                 handleLengthChange={handleLengthChange}
                 handleWidthChange={handleWidthChange}
                 handleNumberOfDoorsChange={handleNumberOfDoorsChange}
-                handleGoBack={handleGoBack}
-                handleGoNext={handleGoNext}
 
             />)
         }
@@ -130,25 +128,18 @@ function App() {
             return (<Form2
                 doorSpecs={doorSpecs}
                 setDoorSpecs={setDoorSpecs}
-                handleGoBack={handleGoBack}
-                handleGoNext={handleGoNext}
             />)
         }
         if (stepNumber === 3) {
             return (<Form3
                 doorSpecs={doorSpecs}
                 setDoorSpecs={setDoorSpecs}
-                handleGoBack={handleGoBack}
-                handleGoNext={handleGoNext}
             />)
         }
         if (stepNumber === 4) {
             return (<Form4
                 doorSpecs={doorSpecs}
                 setDoorSpecs={setDoorSpecs}
-                handleGoBack={handleGoBack}
-                handleGoNext={handleGoNext}
-                backgroundGradient={backgroundGradient}
             />)
         }
 
@@ -414,16 +405,16 @@ function App() {
 
     return (
         <div>
-            <div style={{ width: (window.innerWidth <= 600 ? '15vh' : '20vh'), height: (window.innerWidth <= 600 ? '3vh' : '8vh'), margin: (window.innerWidth <= 600 ? '1vh 0px 3px 3vh' : '1vh 0px 1px 3vh') }}>
+            <div style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), margin: (window.innerWidth <= 600 ? '0vh 0px 3px 3vh' : '0vh 0px 1px 3vh') }}>
                 <img
                     src={logo}
                     alt="Your Image"
-                    style={{ width: (window.innerWidth <= 600 ? '15vh' : '20vh'), height: (window.innerWidth <= 600 ? '3vh' : '8vh'), objectFit: 'contain' }}
+                    style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), objectFit: 'contain' }}
                 />
                 {/* <button onClick={() => { captureCanvasAsImage(); generatePdf() }}>Capture Canvas</button> */}
             </div>
 
-            <div style={{ marginTop: '1vh' }}>
+            <div style={{ marginTop: '1px' }}>
                 <div className='d-flex flex-column flex-md-row'>
                     <div className=' col-10 col-md-9' style={{ position: 'relative', ...styleCss, borderRadius: '20px 20px 20px 20px' }}>
                         <DoorScene
@@ -457,11 +448,11 @@ function App() {
                         </button>
                     </div>
 
-                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative' }}>
-                        <div className='container' style={{ paddingBottom: '2rem' }}>
+                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', paddingLeft: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative',marginTop:'0vh' }}>
+                        <div className='container' >
                             {getForm()}
                         </div>
-                        <div className="container" style={{ position: 'absolute', bottom: 4, width: '85%' }}>
+                        <div className="container" style={{ position: 'absolute', bottom: 2, width: '85%' }}>
                             <BackNextComp 
                             middleLabel={stepNumber+'/'+4} 
                             onGoBack={handleGoBack} 
