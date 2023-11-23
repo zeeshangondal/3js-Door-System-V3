@@ -226,6 +226,16 @@ function App() {
         }
     };
 
+    function fromDoorTypeNumberToName(n) {
+        if (n == 1)
+            return "Scharnierdeur"
+        if (n == 2)
+            return "Pivotdeur"
+        if (n == 3)
+            return "Schuifdeur"
+        if (n == 4)
+            return "Vast Paneel"
+    }
     const rendererRef = useRef();
 
     // Your other components and code here
@@ -285,16 +295,7 @@ function App() {
         // Door Specification heading
         pdf.text('Door Specification', 10, 15);
 
-        function fromDoorTypeNumberToName(n) {
-            if (n == 1)
-                return "Scharnierdeur"
-            if (n == 2)
-                return "Pivotdeur"
-            if (n == 3)
-                return "Schuifdeur"
-            if (n == 4)
-                return "Vast Paneel"
-        }
+        
         function fromPanelPositionNumberToName(n) {
             if (n == 1)
                 return "Geen"
@@ -427,6 +428,25 @@ function App() {
                             convertMmToDoorWidth={convertMmToDoorWidth}
                             backgroundGradient={backgroundGradient}
                         />
+                        <div
+                            style={{
+                                position: 'absolute',
+                                bottom: '0',
+                                left: '0',
+                                marginBottom: (window.innerWidth <= 600 ? '2%' : '2%'),
+                                marginLeft: (window.innerWidth <= 600 ? '3%' : '2%'),
+                                padding: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                                fontSize: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                                borderRadius: '3vh',
+                                border: 'none'
+                            }}
+                            // style={{ position: 'absolute', bottom: '0', right: '0', marginBottom: '20px', marginRight: '20px', size:'3vh', borderRadius:'3vh', padding:'20px' }}
+                            onClick={() => { captureCanvasAsImage(); handleShow() }}
+                        >
+                            <h5>Enkele</h5>
+                            <h4>{fromDoorTypeNumberToName(doorSpecs.doorType)}</h4>
+                            
+                        </div>
                         <button
                             type="button"
                             className={`btn btn-light grid-hover ${window.innerWidth <= 600 ? 'btn-sm' : 'btn-lg'}`}
@@ -448,17 +468,18 @@ function App() {
                         </button>
                     </div>
 
-                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', paddingLeft: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative',marginTop:'0vh' }}>
+                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh' }}>
                         <div className='container' >
                             {getForm()}
                         </div>
+                        <br /><br />
                         <div className="container" style={{ position: 'absolute', bottom: 2, width: '85%' }}>
-                            <BackNextComp 
-                            middleLabel={stepNumber+'/'+4} 
-                            onGoBack={handleGoBack} 
-                            onGoNext={handleGoNext} 
-                            backDisabled={stepNumber==1}
-                            nextButtonLabel={stepNumber==4? 'Offer':'Next Step' } 
+                            <BackNextComp style={{ paddingBottom: '2rem' }}
+                                middleLabel={stepNumber + '/' + 4}
+                                onGoBack={handleGoBack}
+                                onGoNext={handleGoNext}
+                                backDisabled={stepNumber == 1}
+                                nextButtonLabel={stepNumber == 4 ? 'Offer' : 'Next Step'}
                             />
 
                         </div>
