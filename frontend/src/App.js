@@ -295,7 +295,7 @@ function App() {
         // Door Specification heading
         pdf.text('Door Specification', 10, 15);
 
-        
+
         function fromPanelPositionNumberToName(n) {
             if (n == 1)
                 return "Geen"
@@ -403,321 +403,330 @@ function App() {
 
         return pdf
     };
+    function getLeftBottomHeading() {
+        if (doorSpecs.panelTypePosition == 1)
+            return 'Zonder zijpanelen'
+        if (doorSpecs.panelTypePosition == 2)
+            return 'Met links zijpaneel'
+        if (doorSpecs.panelTypePosition == 3)
+            return 'Met rechts zijpaneel'
+        if (doorSpecs.panelTypePosition == 4)
+            return 'Met dubbel zijpaneel'
+    }
 
-    return (
-        <div>
-            <div style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), margin: (window.innerWidth <= 600 ? '0vh 0px 3px 3vh' : '0vh 0px 1px 3vh') }}>
-                <img
-                    src={logo}
-                    alt="Your Image"
-                    style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), objectFit: 'contain' }}
-                />
-                {/* <button onClick={() => { captureCanvasAsImage(); generatePdf() }}>Capture Canvas</button> */}
-            </div>
 
-            <div style={{ marginTop: '1px' }}>
-                <div className='d-flex flex-column flex-md-row'>
-                    <div className=' col-10 col-md-9' style={{ position: 'relative', ...styleCss, borderRadius: '20px 20px 20px 20px' }}>
-                        <DoorScene
-                            rendererRef={rendererRef}
-                            sWidth={convertMmToDoorWidth(doorSpecs.width)}
-                            sHeight={convertMmToDoorHeight(doorSpecs.length)}
-                            doorHandleVisible={true}
-                            doorSpecs={doorSpecs}
-                            convertMmToDoorHeight={convertMmToDoorHeight}
-                            convertMmToDoorWidth={convertMmToDoorWidth}
-                            backgroundGradient={backgroundGradient}
-                        />
-                        <div
-                            style={{
-                                position: 'absolute',
-                                bottom: '0',
-                                left: '0',
-                                marginBottom: (window.innerWidth <= 600 ? '2%' : '2%'),
-                                marginLeft: (window.innerWidth <= 600 ? '3%' : '2%'),
-                                padding: (window.innerWidth <= 600 ? '1vh' : '2vh'),
-                                fontSize: (window.innerWidth <= 600 ? '1vh' : '2vh'),
-                                borderRadius: '3vh',
-                                border: 'none'
-                            }}
-                            // style={{ position: 'absolute', bottom: '0', right: '0', marginBottom: '20px', marginRight: '20px', size:'3vh', borderRadius:'3vh', padding:'20px' }}
-                            onClick={() => { captureCanvasAsImage(); handleShow() }}
-                        >
-                            <h5>Enkele</h5>
-                            <h4>{fromDoorTypeNumberToName(doorSpecs.doorType)}</h4>
-                            
-                        </div>
-                        <button
-                            type="button"
-                            className={`btn btn-light grid-hover ${window.innerWidth <= 600 ? 'btn-sm' : 'btn-lg'}`}
-                            style={{
-                                position: 'absolute',
-                                bottom: '0',
-                                right: '0',
-                                marginBottom: (window.innerWidth <= 600 ? '2%' : '2%'),
-                                marginRight: (window.innerWidth <= 600 ? '3%' : '2%'),
-                                padding: (window.innerWidth <= 600 ? '1vh' : '2vh'),
-                                fontSize: (window.innerWidth <= 600 ? '1vh' : '2vh'),
-                                borderRadius: '3vh',
-                                border: 'none'
-                            }}
-                            // style={{ position: 'absolute', bottom: '0', right: '0', marginBottom: '20px', marginRight: '20px', size:'3vh', borderRadius:'3vh', padding:'20px' }}
-                            onClick={() => { captureCanvasAsImage(); handleShow() }}
-                        >
-                            Offerte aanvragen
-                        </button>
+return (
+    <div>
+        <div style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), margin: (window.innerWidth <= 600 ? '0vh 0px 3px 3vh' : '0vh 0px 1px 3vh') }}>
+            <img
+                src={logo}
+                alt="Your Image"
+                style={{ width: (window.innerWidth <= 600 ? '15vh' : '9vh'), height: (window.innerWidth <= 600 ? '3vh' : '4vh'), objectFit: 'contain' }}
+            />
+            {/* <button onClick={() => { captureCanvasAsImage(); generatePdf() }}>Capture Canvas</button> */}
+        </div>
+
+        <div style={{ marginTop: '1px' }}>
+            <div className='d-flex flex-column flex-md-row'>
+                <div className=' col-10 col-md-9' style={{ position: 'relative', ...styleCss, borderRadius: '20px 20px 20px 20px' }}>
+                    <DoorScene
+                        rendererRef={rendererRef}
+                        sWidth={convertMmToDoorWidth(doorSpecs.width)}
+                        sHeight={convertMmToDoorHeight(doorSpecs.length)}
+                        doorHandleVisible={true}
+                        doorSpecs={doorSpecs}
+                        convertMmToDoorHeight={convertMmToDoorHeight}
+                        convertMmToDoorWidth={convertMmToDoorWidth}
+                        backgroundGradient={backgroundGradient}
+                    />
+                    <div
+                        style={{
+                            position: 'absolute',
+                            bottom: '-2vh',
+                            left: '0',
+                            marginBottom: (window.innerWidth <= 600 ? '2%' : '2%'),
+                            marginLeft: (window.innerWidth <= 600 ? '3%' : '2%'),
+                            padding: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                            fontSize: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                            borderRadius: '3vh',
+                            border: 'none'
+                        }}
+                    >
+                        <h5 className='mt-3' style={{color:'#4b5563', fontSize:'130%'}}>{`Enkel${doorSpecs.doorType == 4 ? '' : 'e'}`}</h5>
+                        <h4 style={{marginTop:'-1vh', color:'#000000',fontWeight:'bold', fontSize:'160%'}}>{fromDoorTypeNumberToName(doorSpecs.doorType)}</h4>
+                        <h5 style={{marginTop:'-1vh', color:'#4b5563', fontSize:'130%'}}>{getLeftBottomHeading()}</h5>
                     </div>
+                    <button
+                        type="button"
+                        className={`btn btn-light grid-hover ${window.innerWidth <= 600 ? 'btn-sm' : 'btn-lg'}`}
+                        style={{
+                            position: 'absolute',
+                            bottom: '0',
+                            right: '0',
+                            marginBottom: (window.innerWidth <= 600 ? '2%' : '2%'),
+                            marginRight: (window.innerWidth <= 600 ? '3%' : '2%'),
+                            padding: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                            fontSize: (window.innerWidth <= 600 ? '1vh' : '2vh'),
+                            borderRadius: '3vh',
+                            border: 'none'
+                        }}
+                        // style={{ position: 'absolute', bottom: '0', right: '0', marginBottom: '20px', marginRight: '20px', size:'3vh', borderRadius:'3vh', padding:'20px' }}
+                        onClick={() => { captureCanvasAsImage(); handleShow() }}
+                    >
+                        Offerte aanvragen
+                    </button>
+                </div>
 
-                    <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh' }}>
-                        <div className='container' >
-                            {getForm()}
-                        </div>
-                        <br /><br />
-                        <div className="container" style={{ position: 'absolute', bottom: 2, width: '85%' }}>
-                            <BackNextComp style={{ paddingBottom: '2rem' }}
-                                middleLabel={stepNumber + '/' + 4}
-                                onGoBack={handleGoBack}
-                                onGoNext={handleGoNext}
-                                backDisabled={stepNumber == 1}
-                                nextButtonLabel={stepNumber == 4 ? 'Offer' : 'Next Step'}
-                            />
+                <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh' }}>
+                    <div className='container' >
+                        {getForm()}
+                    </div>
+                    <br /><br />
+                    <div className="container" style={{ position: 'absolute', bottom: 2, width: '85%' }}>
+                        <BackNextComp style={{ paddingBottom: '2rem' }}
+                            middleLabel={stepNumber + '/' + 4}
+                            onGoBack={handleGoBack}
+                            onGoNext={handleGoNext}
+                            backDisabled={stepNumber == 1}
+                            nextButtonLabel={stepNumber == 4 ? 'Offer' : 'Next Step'}
+                        />
 
-                        </div>
                     </div>
                 </div>
             </div>
-            <Modal show={showModal} onHide={handleClose} centered size="lg" className="custom-modal">
-                <Modal.Body>
-                    <>
-                        <div>
-                            <h3>Offerte aanvragen</h3><br />
-                            <h5>Wilt u de offerte aanvragen of een extra configuratie toevoegen?</h5><br />
-                        </div>
-                        <div>
-                            <p style={{ fontStyle: 'italic' }}>Indien u nog geen configuraties heeft opgeslagen, zal de openstaande configuratie verzonden worden. Anders worden enkel de configuraties die opgeslagen zijn verzonden!</p>
-                        </div>
-                    </>
-
-                </Modal.Body>
-                <Modal.Footer>
-                    <div className="d-flex justify-content-between w-100">
-                        <Button variant="dark" style={{ borderRadius: '10px', padding: '10px' }} onClick={() => { handleClose(); handleFormShow() }}>
-                            <b>Offerte aanvragen</b>
-                        </Button>
-
-                        <Button variant="dark" onClick={handleClose} style={{ borderRadius: '10px', padding: '10px' }}>
-                            <b>Annuleren</b>
-                        </Button>
-                    </div>
-                </Modal.Footer>
-            </Modal>
-
-            <Modal show={formShowModal} onHide={handleFormClose} centered size="lg" className="custom-modal">
-                <Modal.Body>
-                    <>
-                        <div className='container'>
-                            <h3>Contactgegevens</h3>
-                            <h5>Vul jou contactgegevens in zodat we jou persoonlijk design kunnen versturen!</h5>
-                            <br />
-                            <div>
-                                <Form onSubmit={handleSubmit}>
-                                    <Row>
-                                        <Col md={6}>
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-                                                    placeholder="First Name"
-                                                    value={form.firstName}
-                                                    onChange={(e) => handleChange('firstName', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    className="custom-input"
-
-                                                    type="text"
-                                                    placeholder="Email"
-                                                    value={form.email}
-                                                    onChange={(e) => handleChange('email', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    className="custom-input"
-
-                                                    type="text"
-                                                    placeholder="Address"
-                                                    value={form.address}
-                                                    onChange={(e) => handleChange('address', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    className="custom-input"
-
-                                                    type="text"
-                                                    placeholder="Municipality"
-                                                    value={form.municipality}
-                                                    onChange={(e) => handleChange('municipality', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-                                            <Form.Group>
-                                                <Form.Select
-                                                    value={form.vatSystem}
-                                                    className="custom-input"
-
-                                                    onChange={(e) => handleChange('vatSystem', e.target.value)}
-                                                    required
-                                                >
-                                                    <option value="">Selecteer btw stelsel</option>
-                                                    <option value="6% - Renovatie - woning > 10 jaar">{'6% - Renovatie - woning > 10 jaar'}</option>
-                                                    <option value="21% - nieuwbouw - woning < 10 jaar">'{'21% - nieuwbouw - woning < 10 jaar'}</option>
-                                                    <option value="0% - btw verlegd (btw-nummer verplicht!)">{'0% - btw verlegd (btw-nummer verplicht!)'}</option>
-                                                </Form.Select>
-                                            </Form.Group>
-                                        </Col>
-
-                                        <Col md={6}>
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-
-                                                    placeholder="Last Name"
-                                                    value={form.lastName}
-                                                    onChange={(e) => handleChange('lastName', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-
-                                                    placeholder="Telephone"
-                                                    value={form.telephone}
-                                                    onChange={(e) => handleChange('telephone', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-
-                                                    placeholder="Postcode"
-                                                    value={form.postcode}
-                                                    onChange={(e) => handleChange('postcode', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-
-                                                    placeholder="Country"
-                                                    value={form.country}
-                                                    onChange={(e) => handleChange('country', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-                                    <br />
-                                    <div className='d-flex flex-row' style={{ alignItems: 'flex-end' }}>
-                                        <h3>Bedrijfsgegevens</h3>
-                                        <h5>(indien van toepassing)</h5>
-                                    </div>
-
-                                    <Row>
-                                        <Col>
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    placeholder="Company Name"
-                                                    className="custom-input"
-
-                                                    value={form.companyName}
-                                                    onChange={(e) => handleChange('companyName', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <Form.Group>
-                                                <Form.Control
-                                                    type="text"
-                                                    className="custom-input"
-
-                                                    placeholder="VAT Number"
-                                                    value={form.vatNumber}
-                                                    onChange={(e) => handleChange('vatNumber', e.target.value)}
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-                                    <br />
-
-                                    <div >
-                                        <h3>Opmerkingen</h3>
-                                    </div>
-                                    <Form.Group>
-                                        <Form.Control
-                                            as="textarea"
-                                            className="custom-input"
-                                            style={{ height: "100px" }}
-                                            placeholder="Type your comments here"
-                                            value={form.comments}
-                                            onChange={(e) => handleChange('comments', e.target.value)}
-                                        />
-                                    </Form.Group>
-
-                                    <div>
-                                        <input type="checkbox" checked={true} />
-                                        <label>Ik geef toestemming om de ingestuurde data te verwerken en om een offerte op naam te ontvangen.</label>
-                                    </div>
-                                    <br />
-                                    <div className="d-flex flex-column w-100">
-                                        <Button type="submit" variant="dark" style={{ borderRadius: '10px', padding: '10px' }}>
-                                            <b>Offerte aanvragen</b>
-                                        </Button>
-                                        <br />
-                                        <Button variant="dark" onClick={handleFormClose} style={{ borderRadius: '10px', padding: '10px' }}>
-                                            <b>Annuleren</b>
-                                        </Button>
-                                    </div>
-                                </Form>
-                            </div>
-                        </div>
-                    </>
-
-                </Modal.Body>
-                <Modal.Footer>
-                </Modal.Footer>
-            </Modal>
-
-
-
-            <div style={{ textAlign: 'center', marginTop: '5px' }}>
-                <h5 style={{ fontStyle: 'italic', fontWeight: 'bold' }}>
-                    Powerd by Gravitas
-                </h5>
-            </div>
         </div>
-    )
-}
+        <Modal show={showModal} onHide={handleClose} centered size="lg" className="custom-modal">
+            <Modal.Body>
+                <>
+                    <div>
+                        <h3>Offerte aanvragen</h3><br />
+                        <h5>Wilt u de offerte aanvragen of een extra configuratie toevoegen?</h5><br />
+                    </div>
+                    <div>
+                        <p style={{ fontStyle: 'italic' }}>Indien u nog geen configuraties heeft opgeslagen, zal de openstaande configuratie verzonden worden. Anders worden enkel de configuraties die opgeslagen zijn verzonden!</p>
+                    </div>
+                </>
+
+            </Modal.Body>
+            <Modal.Footer>
+                <div className="d-flex justify-content-between w-100">
+                    <Button variant="dark" style={{ borderRadius: '10px', padding: '10px' }} onClick={() => { handleClose(); handleFormShow() }}>
+                        <b>Offerte aanvragen</b>
+                    </Button>
+
+                    <Button variant="dark" onClick={handleClose} style={{ borderRadius: '10px', padding: '10px' }}>
+                        <b>Annuleren</b>
+                    </Button>
+                </div>
+            </Modal.Footer>
+        </Modal>
+
+        <Modal show={formShowModal} onHide={handleFormClose} centered size="lg" className="custom-modal">
+            <Modal.Body>
+                <>
+                    <div className='container'>
+                        <h3>Contactgegevens</h3>
+                        <h5>Vul jou contactgegevens in zodat we jou persoonlijk design kunnen versturen!</h5>
+                        <br />
+                        <div>
+                            <Form onSubmit={handleSubmit}>
+                                <Row>
+                                    <Col md={6}>
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+                                                placeholder="First Name"
+                                                value={form.firstName}
+                                                onChange={(e) => handleChange('firstName', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                className="custom-input"
+
+                                                type="text"
+                                                placeholder="Email"
+                                                value={form.email}
+                                                onChange={(e) => handleChange('email', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                className="custom-input"
+
+                                                type="text"
+                                                placeholder="Address"
+                                                value={form.address}
+                                                onChange={(e) => handleChange('address', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                className="custom-input"
+
+                                                type="text"
+                                                placeholder="Municipality"
+                                                value={form.municipality}
+                                                onChange={(e) => handleChange('municipality', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+                                        <Form.Group>
+                                            <Form.Select
+                                                value={form.vatSystem}
+                                                className="custom-input"
+
+                                                onChange={(e) => handleChange('vatSystem', e.target.value)}
+                                                required
+                                            >
+                                                <option value="">Selecteer btw stelsel</option>
+                                                <option value="6% - Renovatie - woning > 10 jaar">{'6% - Renovatie - woning > 10 jaar'}</option>
+                                                <option value="21% - nieuwbouw - woning < 10 jaar">'{'21% - nieuwbouw - woning < 10 jaar'}</option>
+                                                <option value="0% - btw verlegd (btw-nummer verplicht!)">{'0% - btw verlegd (btw-nummer verplicht!)'}</option>
+                                            </Form.Select>
+                                        </Form.Group>
+                                    </Col>
+
+                                    <Col md={6}>
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+
+                                                placeholder="Last Name"
+                                                value={form.lastName}
+                                                onChange={(e) => handleChange('lastName', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+
+                                                placeholder="Telephone"
+                                                value={form.telephone}
+                                                onChange={(e) => handleChange('telephone', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+
+                                                placeholder="Postcode"
+                                                value={form.postcode}
+                                                onChange={(e) => handleChange('postcode', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+
+                                                placeholder="Country"
+                                                value={form.country}
+                                                onChange={(e) => handleChange('country', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <br />
+                                <div className='d-flex flex-row' style={{ alignItems: 'flex-end' }}>
+                                    <h3>Bedrijfsgegevens</h3>
+                                    <h5>(indien van toepassing)</h5>
+                                </div>
+
+                                <Row>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                placeholder="Company Name"
+                                                className="custom-input"
+
+                                                value={form.companyName}
+                                                onChange={(e) => handleChange('companyName', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Control
+                                                type="text"
+                                                className="custom-input"
+
+                                                placeholder="VAT Number"
+                                                value={form.vatNumber}
+                                                onChange={(e) => handleChange('vatNumber', e.target.value)}
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <br />
+
+                                <div >
+                                    <h3>Opmerkingen</h3>
+                                </div>
+                                <Form.Group>
+                                    <Form.Control
+                                        as="textarea"
+                                        className="custom-input"
+                                        style={{ height: "100px" }}
+                                        placeholder="Type your comments here"
+                                        value={form.comments}
+                                        onChange={(e) => handleChange('comments', e.target.value)}
+                                    />
+                                </Form.Group>
+
+                                <div>
+                                    <input type="checkbox" checked={true} />
+                                    <label>Ik geef toestemming om de ingestuurde data te verwerken en om een offerte op naam te ontvangen.</label>
+                                </div>
+                                <br />
+                                <div className="d-flex flex-column w-100">
+                                    <Button type="submit" variant="dark" style={{ borderRadius: '10px', padding: '10px' }}>
+                                        <b>Offerte aanvragen</b>
+                                    </Button>
+                                    <br />
+                                    <Button variant="dark" onClick={handleFormClose} style={{ borderRadius: '10px', padding: '10px' }}>
+                                        <b>Annuleren</b>
+                                    </Button>
+                                </div>
+                            </Form>
+                        </div>
+                    </div>
+                </>
+
+            </Modal.Body>
+            <Modal.Footer>
+            </Modal.Footer>
+        </Modal>
+
+
+
+        <div style={{ textAlign: 'center', marginTop: '-2px' }}>
+            <small style={{ fontStyle: 'italic', fontWeight: 'bold' }}>
+                @Powerd by Gravitas
+            </small>
+        </div>
+    </div>
+)
+            }
 
 export default App;

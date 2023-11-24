@@ -80,7 +80,7 @@ function Form1(props) {
                             onMouseLeave={() => setIsHovered(0)}
                         >
                             {isHovered === index + 1 ?
-                                <h5 style={{color:'white', fontWeight:'normal'}}>{getHoverTextFor(index + 1)}</h5>
+                                <h6 style={{color:'white', fontWeight:'normal'}}>{getHoverTextFor(index + 1)}</h6>
                             :
                             <img width="110%" src={img} alt="My SVG Image" />
                             }
