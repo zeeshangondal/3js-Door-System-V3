@@ -24,7 +24,7 @@ const ColorDropdown = ({ setChosenColor, chosenColor }) => {
   };
 
   const dropdownToggleStyles = {
-    borderColor: 'blue', // Set the border color when selected
+    // borderColor: 'black', // Set the border color when selected
     backgroundColor: chosenColor,
     width: '100%',
     display: 'flex',

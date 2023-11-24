@@ -7,7 +7,7 @@ const ColorfulCircle = ({ size, color, chosenColor, setColor }) => {
     backgroundColor: color,
     borderRadius: '50%',
     boxShadow: isClicked
-      ? '0 0 0 10px white, 0 0 0 11px rgba(0, 0, 0, 0.4)' // Adjust the shadow size and color
+      ? '0 0 0 4px white, 0 0 0 6px rgba(0, 0, 0, 0.4)' // Adjust the shadow size and color
       : '0 9px 12px rgba(0, 0, 0, 0.3)', // Adjust the shadow size and color
     display: 'inline-block',
     margin: '1vh',
