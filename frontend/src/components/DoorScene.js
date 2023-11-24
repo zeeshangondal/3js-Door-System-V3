@@ -240,7 +240,7 @@ function DoorScene(props) {
 
             if (controlsRef.current) {
                 // Disable all movements along x, y, and z axes
-                controlsRef.current.enableZoom = false;
+                controlsRef.current.enableZoom = true;
                 controlsRef.current.enableRotate = false;
                 controlsRef.current.enablePan = false;
 

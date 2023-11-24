@@ -34,7 +34,7 @@ let doorObj = {
     leftRightPanelHBars: 0,
     leftRightPanelVBars: 0,
     frameColor: "#0A0A0A",
-    glassColor: "#959ca8",
+    glassColor: "#a9afb7",
     textureImage: '',
     leftPanel: {
         width: 0
@@ -317,21 +317,21 @@ function App() {
                 return "Visiosun"
         }
         function fromGlassColorToName(c) {
-            if (c == "#959ca8")
+            if (c == "#a9afb7")
                 return "Transparent"
-            if (c == "#4e5660")
+            if (c == "#5d6674")
                 return "Fume Grijis"
             if (c == "#908377")
                 return "Fume Bruin"
-            if (c == "#383c44")
+            if (c == "#6a6e76")
                 return "Dark Gray"
             if (c == "#979da2")
                 return "Melk"
             if (c == "#868e97")
                 return "Staaldraad"
-            if (c == "#070708")
+            if (c == "#363637")
                 return "Black"
-            if (c == "#959ca8")
+            if (c == "#bcc0c7")
                 return "White"
         }
         // Door Specs information on the second page
@@ -477,7 +477,7 @@ return (
                     </button>
                 </div>
 
-                <div className='col-12 col-md-3 shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh', height:'105vh' }}>
+                <div className='col-12 col-md-3 shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh', height:(window.innerWidth<=600> '':'105vh') }}>
                     <div className='container' >
                         {getForm()}
                     </div>
