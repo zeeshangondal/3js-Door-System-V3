@@ -3,13 +3,10 @@ import { Dropdown } from 'react-bootstrap';
 import { ColorOptions } from './ColorOptionsData';
 
 const ColorDropdown = ({ setChosenColor, chosenColor }) => {
-  let obj= ColorOptions.find((color) => color.value === chosenColor);
-  // console.log(chosenColor, obj)
-  // const [tempColor,setTempColor]= React.useState({obj})
+  let obj = ColorOptions.find((color) => color.value === chosenColor);
 
   const handleSelect = (eventKey) => {
     const selectedColor = ColorOptions.find((color) => color.value === eventKey);
-    // setTempColor(selectedColor)
     setChosenColor(selectedColor.value);
   };
 
@@ -26,18 +23,21 @@ const ColorDropdown = ({ setChosenColor, chosenColor }) => {
     overflowY: 'auto',
   };
 
+  const dropdownToggleStyles = {
+    borderColor: 'blue', // Set the border color when selected
+    backgroundColor: chosenColor,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  };
+
   return (
     <Dropdown onSelect={handleSelect}>
       <Dropdown.Toggle
         variant="success"
         id="color-dropdown"
-        style={{
-          backgroundColor: chosenColor,
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
+        style={dropdownToggleStyles}
       >
         <span>{obj.text}</span>
         <span style={{ marginLeft: 'auto' }}></span>
