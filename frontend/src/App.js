@@ -477,7 +477,7 @@ return (
                     </button>
                 </div>
 
-                <div className='col-12 col-md-3  shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh' }}>
+                <div className='col-12 col-md-3 shadow' style={{ backgroundColor: 'white', fontWeight: 'bold', padding: '1rem', borderRadius: '20px 20px 20px 20px', position: 'relative', marginTop: '0vh', height:'105vh' }}>
                     <div className='container' >
                         {getForm()}
                     </div>

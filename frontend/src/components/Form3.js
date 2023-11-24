@@ -48,13 +48,13 @@ function Form2(props) {
             <i><small style={{ fontWeight: 'normal' }}>You can change the position of the panel division by dragging the transoms and mullions on the 3D model.</small></i>
 
             <div>
-                <div className='mt-3'>
+                <div className='mt-2'>
                     <b><h5>Door</h5></b>
                     <LabelWithRangeForm3 label="Liggers" number={doorSpecs.numberOfHBars}   setNumber={setNumberOfDoorHBars}  range={[0, 1, 2, 3, 4]} />
                     <LabelWithRangeForm3 label="Staanders" number={doorSpecs.numberOfVBars} setNumber={setNumberOfDoorVBars} range={[0, 1, 2, 3, 4]} />
                 </div>
                 {doorSpecs.leftPanel.width > 0 || doorSpecs.rightPanel.width > 0 ?
-                    <div className='mt-3'>
+                    <div className='mt-2'>
                         <b><h5>Zig Panel</h5></b>
                         <LabelWithRangeForm3 label="Liggers" number={doorSpecs.leftRightPanelHBars} setNumber={setNumberOfLeftRightPanelHBars} range={[0, 1, 2, 3, 4]} />
                         <LabelWithRangeForm3 label="Staanders" number={doorSpecs.leftRightPanelVBars} setNumber={setNumberOfLeftRightPanelVBars} range={[0, 1, 2, 3, 4]} />
