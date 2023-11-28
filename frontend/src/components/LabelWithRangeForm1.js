@@ -56,7 +56,7 @@ export default function LabelWithRange({ label, number, setNumber ,range}) {
                                         : {}),
                                     ...(index === 0
                                         ? {
-                                            borderWidth: '1px 1px 1px 0px',
+                                            borderWidth: '1px 0px 1px 1px',
                                             borderStyle: 'solid',
                                             borderColor: 'rgb(156, 163, 175)',
                                             borderRadius: '10px 0px 0px 10px',
